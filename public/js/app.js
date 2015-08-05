@@ -2,7 +2,6 @@ var myApp = angular.module('myApp', ['ui.router', 'ng', 'ui.router.title']);
 myApp.run(
     ['$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
-
             // It's very handy to add references to $state and $stateParams to the $rootScope
             // so that you can access them from any scope within your applications.For example,
             // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
@@ -22,7 +21,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('home', {
             url: "/",
             templateUrl: "/index",
-            resolve: { $title: function(){ return 'Home' } }
+            resolve: { $title: function(){ return 'Yo' } }
         });
 });
 
@@ -32,17 +31,20 @@ myApp.filter('capitalize', function() {
     }
 });
 
-myApp.controller('AppController', ['$scope', '$title', '$filter', '$state', function($scope, $title, $filter){
+myApp.controller('AppController', ['$scope', '$filter', '$state', function($scope, $filter, $state){
     $scope.getPageTitle = function(){
-        var pageTitle = 'yo';
-        /*
-        if ($title){
-            pageTitle = $filter('capitalize')($title) + " - R.J. Freund's Home Website";
+        var pageTitle = '';
+        var pageTitlePrefix = '';
+        var siteTitle = "R.J. Freund's Website";
+        if ($state.current.name == 'home') {
+            return siteTitle;
         }
-        else {
-            pageTitle = $filter('capitalize')($state.current.name + " - R.J. Freund's Home Website");
+        if (typeof $state.$current.resolve.$title !== 'undefined') {
+            pageTitlePrefix = $state.$current.resolve.$title();
+        } else {
+            pageTitlePrefix = $state.current.name;
         }
-        */
+        pageTitle = $filter('capitalize')(pageTitlePrefix) + " - " + siteTitle;
         return pageTitle;
     };
 }]);

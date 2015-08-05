@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="AppController">
+<html ng-app="myApp" ng-controller="AppController"  class="fullHeight blackBackground">
 <head>
     <title  ng-bind="getPageTitle()">R.J. Freund's Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel='stylesheet' href='/css/style.css' />
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,600,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/bower_components/angular-ui-router-title/angular-ui-router-title.js"></script>
     <script src="/js/app.js"></script>
 </head>
-<body>
-    <div ui-view></div>
+<body class="fullHeight openSans tallLineHeight">
+<div class="table fullHeight horizAlign">
+    <div class="tableCell verticalAlign">
+        <div class="table fullWidth widthRestrict lightGrayBackground translucentBorder padding20">
+            <img id="backgroundImage" src='/img/galaxy.png'/>
+            <% include ./headers/header.ejs %>
+            <main ui-view></main>
+            <% include ./navs/nav.ejs %>
+            <% include ./footers/footer.ejs %>
+        </div>
+    </div>
+</div>
 </body>
 </html>

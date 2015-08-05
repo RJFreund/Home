@@ -1,8 +1,404 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
 }
 
-a {
-  color: #00B7FF;
+a img{
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+h2, h3, h4, h5, h6{
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+
+.tallLineHeight{
+  line-height: 161.8%;
+}
+
+.openSans{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.raleway{
+  font-family: 'Raleway', sans-serif;
+}
+
+.logoContainer{
+  width: 38.2%;
+}
+
+.logo{
+  max-height: 130px;
+}
+
+.widthRestrict{
+  max-width:	384px;
+}
+
+.goldenRatioWidthSmall{
+  max-width: 38.1%;
+}
+
+.goldenRatioWidthLarge{
+  max-width: 61.9%;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.lightGrayBackground{
+  background-color: #DDDDDD;
+}
+
+.darkGrayBackground{
+  background-color: gray;
+}
+
+.marginTop10{
+  margin-top: 10px;
+}
+
+.marginBottom10{
+  margin-bottom: 10px;
+}
+
+.marginBottom20{
+  margin-bottom: 20px;
+}
+
+.paddingInherit{
+  padding: inherit;
+}
+
+.padding20{
+  padding: 20px;
+}
+
+.paddingTop20{
+  padding-top: 20px;
+}
+
+.paddingRight20{
+  padding-right: 20px;
+}
+
+.paddingBottom20{
+  padding-bottom: 20px;
+}
+
+.paddingLeft20{
+  padding-left: 20px;
+}
+
+.paddingTop10{
+  padding-top: 10px;
+}
+
+.paddingRight10{
+  padding-right: 10px;
+}
+
+.paddingBottom10{
+  padding-bottom: 10px;
+}
+
+.paddingLeft10{
+  padding-left: 10px
+}
+
+.block{
+  display: block;
+}
+
+.table{
+  display: table;
+}
+
+.tableRow{
+  display: table-row;
+}
+
+.tableCell{
+  display: table-cell;
+}
+
+.verticalAlign{
+  vertical-align: middle;
+}
+
+.verticalAlignTop{
+  vertical-align: top;
+}
+
+.horizAlign{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fullWidth{
+  width: 100%;
+}
+
+.fullHeight{
+  height: 100%;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.textAlignCenter{
+  text-align: center;
+}
+
+.textAlignRight{
+  text-align: right;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.fontWeight600{
+  font-weight: 600;
+}
+
+.noBorder{
+  border: none;
+}
+
+.translucentBorder{
+  border: 5px solid rgb(127, 127, 127);
+  border: 5px solid rgba(127, 127, 127, .5);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.border5{
+  border: 5px solid;
+}
+
+.borderLeft{
+  border-left: 1px solid;
+}
+
+.borderRight{
+  border-right: 1px solid;
+}
+
+.blackBorder{
+  border-color: #000000;
+}
+
+.blueBorder{
+  border-color: #2025f0;
+}
+
+.blueText{
+  color: #2025f0;
+}
+
+.blackText{
+  color: #000000;
+}
+
+.blackBackground{
+  background-color: #000000;
+}
+
+.fullMinHeight{
+  min-height: 100%;
+}
+
+.heightAuto{
+  height: auto;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.top0{
+  top: 0;
+}
+
+.left0{
+  left: 0;
+}
+
+.zIndex-1{
+  z-index: -1;
+}
+
+.navLink{
+  border-right: 1px solid black;
+}
+
+.navLink:last-of-type{
+  border-right: 0px;
+}
+
+#backgroundImage{
+  width: 100%;
+  min-height: 100%;
+  min-width: 1500px;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1500px) { /* Specific to this particular image */
+  #backgroundImage {
+    left: 50%;
+    margin-left: -750px;   /* 50% */
+  }
+}
+
+.hoverColorChange:hover{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.hoverPointer:hover{
+  cursor: pointer;
+}
+
+.floatLeft{
+  float: left;
+}
+
+.floatRight{
+  float: right;
+}
+
+.navContainer{
+  display: table;
+  font-family: Raleway;
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.navSubContainer{
+  display: table-row;
+}
+
+.navSubContainer:first-of-type{
+  border-bottom: 1px solid black;
+}
+
+.navLink{
+  display: table-cell;
+  text-align: center;
+  background-color: #adabab;
+}
+
+.navLink:hover .navText{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.navText{
+  display: block;
+  padding: 10px 10px 10px 10px;
+  color: #000000;
+}
+
+.navRightArrowContainer{
+  visibility: hidden;
+}
+
+.noBackground{
+  background: none;
+}
+
+.noBorder{
+  border: none;
+}
+
+.noPadding{
+  padding: 0px;
+}
+
+.fontSize16{
+  font-size: 16px;
+}
+
+@media screen and (max-width:450px) {
+
+  .navSubContainer{
+    display: table;
+    width: 100%;
+  }
+
+  .navSubContainer:first-of-type{
+    border-bottom: 0px;
+  }
+
+  .navLink{
+    display: table-row;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #FFFFFF;
+    border-right: 0px;
+    border-left: 0px;
+  }
+
+  .navLink:last-of-type{
+    border-top: 1px solid #FFFFFF;
+  }
+
+  .navComponent{
+    display: table-cell;
+  }
+
+  .navText{
+    text-align: left;
+    color: #000000;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+
+  .navRightArrowContainer{
+    visibility: visible;
+    width: 1px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .navRightArrow{
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid black;
+  }
+
+  .navLink:hover .navRightArrowContainer{
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .navLink:hover .navRightArrow{
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #ffffff;
+  }
+
+}
+@media screen and (max-width:320px) {
+
 }

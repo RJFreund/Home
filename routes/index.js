@@ -8,7 +8,7 @@ module.exports = function(io){
     {
       res.render('error');
     }
-    res.render(page);
+    res.render('content/' + page);
   });
 
   router.get('/', function(req, res, next) {

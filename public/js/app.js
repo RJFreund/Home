@@ -12,18 +12,70 @@ myApp.run(
     ]
 )
 myApp.config(function($stateProvider, $urlRouterProvider) {
-    //
-    // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/");
-    //
-    // Now set up the states
     $stateProvider
         .state('home', {
             url: "/",
             templateUrl: "/index",
             resolve: { $title: function(){ return 'Yo' } }
+        })
+        .state('about', {
+            url: "/about",
+            templateUrl: "/about"
+        })
+        .state('projects', {
+            url: "/projects",
+            templateUrl: "/projects"
+        })
+        .state('services', {
+            url: "/services",
+            templateUrl: "/services"
+        })
+        .state('calendar', {
+            url: "/calendar",
+            templateUrl: "/calendar"
+        })
+        .state('contact', {
+            url: "/contact",
+            templateUrl: "/contact"
+        })
+        .state('pageNotFound', {
+            url: "/pageNotFound",
+            templateUrl: "/pageNotFound"
+        })
+        .state('underConstruction', {
+            url: "/underConstruction",
+            templateUrl: "/underConstruction",
+            resolve: { $title: function(){ return 'Under Construction' } }
         });
 });
+
+myApp.service('constructionService', function(){
+    this.isUnderConstruction = function(){
+        return true;
+    };
+});
+
+myApp.run(['$rootScope', '$location', '$state', 'constructionService',
+    function($rootScope, $location, $state, constructionService){
+        $rootScope.$on('$stateChangeStart',
+            function(event, toState, toParams, fromState, fromParams){
+                if (constructionService.isUnderConstruction()
+                    && toState.name === 'underConstruction'){
+                    return;
+                }
+                if (constructionService.isUnderConstruction()){
+                    event.preventDefault();
+                    $state.go('underConstruction');
+                    return;
+                }
+                if (toState.name == 'underConstruction'){
+                    event.preventDefault();
+                    $state.go('pageNotFound');
+                    return;
+                }
+            });
+}]);
 
 myApp.filter('capitalize', function() {
     return function(input) {

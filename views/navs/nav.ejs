@@ -1,60 +1,54 @@
-<%
-var home = '/';
-var about = '/about';
-var projects = '/projects';
-var services = '/services';
-var calendar = '/calendar';
-var contact = '/contact';
-%>
 <nav class="navContainer border5 blueBorder">
     <div class="navSubContainer">
         <div class="navLink">
-            <a class="navComponent navText" href="<%= home %>">
+            <a class="navComponent navText" ui-sref="home">
                 Home
             </a>
-            <a class="navComponent navRightArrowContainer" href="<%= home %>">
+            <!--
+            <a class="navComponent navRightArrowContainer" ui-sref="home">
                 <span class="navRightArrow"></span>
             </a>
+            -->
         </div>
         <div class="navLink">
-            <a class="navComponent navText" href="<%= about %>">
+            <a class="navComponent navText" ui-sref="about">
                 About
             </a>
-            <a class="navComponent navRightArrowContainer" href="<%= about %>">
+            <a class="navComponent navRightArrowContainer" ui-sref="about">
                 <span class="navRightArrow"></span>
             </a>
         </div>
         <div class="navLink">
-            <a class="navComponent navText" href="<%= services %>">
+            <a class="navComponent navText" ui-sref="services">
                 Services
             </a>
-            <a class="navComponent navRightArrowContainer" href="<%= services %>">
+            <a class="navComponent navRightArrowContainer" ui-sref="services">
                 <span class="navRightArrow"></span>
             </a>
         </div>
     </div>
     <div class="navSubContainer">
         <div class="navLink">
-            <a class="navComponent navText" href="<%= projects %>">
+            <a class="navComponent navText" ui-sref="projects">
                 Projects
             </a>
-            <a class="navComponent navRightArrowContainer" href="<%= projects %>">
+            <a class="navComponent navRightArrowContainer" ui-sref="projects">
                 <span class="navRightArrow"></span>
             </a>
         </div>
         <div class="navLink">
-            <a class="navComponent navText" href="<%= calendar %>">
+            <a class="navComponent navText" ui-sref="calendar">
                 Calendar
             </a>
-            <a class="navComponent navRightArrowContainer" href="<%= calendar %>">
+            <a class="navComponent navRightArrowContainer" ui-sref="calendar">
                 <span class="navRightArrow"></span>
             </a>
         </div>
         <div class="navLink">
-            <a class="navComponent navText" href="<%= contact %>">
+            <a class="navComponent navText" ui-sref="contact">
                 Contact
             </a>
-            <a class="navComponent navRightArrowContainer" href="<%= contact %>">
+            <a class="navComponent navRightArrowContainer" ui-sref="contact">
                 <span class="navRightArrow"></span>
             </a>
         </div>

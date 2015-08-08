@@ -47,12 +47,24 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             url: "/underConstruction",
             templateUrl: "/underConstruction",
             resolve: { $title: function(){ return 'Under Construction' } }
+        })
+        .state('repair', {
+            url: "/services#repair",
+            templateUrl: "/services"
+        })
+        .state('websites', {
+            url: "/services#websites",
+            templateUrl: "/services"
+        })
+        .state('software', {
+            url: "/services#software",
+            templateUrl: "/services"
         });
 });
 
 myApp.service('constructionService', function(){
     this.isUnderConstruction = function(){
-        return true;
+        return false;
     };
 });
 

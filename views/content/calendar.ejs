@@ -1,0 +1,8 @@
+<%
+var today = new Date('Ymd');
+%>
+<iframe class="fullWidth" src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;
+showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=DAY&amp;dates=<%= today + '/' + today; %>&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=robert.joseph.freund%40gmail.com&amp;color=%23875509&amp;ctz=America%2FChicago" style=" border-width:0 " width="400" height="400" frameborder="0" scrolling="no"></iframe>
+<div>Click <a title="week view" ui-sref="/calendar/week">here</a> to view my schedule for the week.</div>
+<div><span class="bold">Note:</span> Week view of this calendar may not display well on mobile devices.</div>
+<div class="textAlignCenter">Events shown in time zone: Central Time</div>

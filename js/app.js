@@ -13,8 +13,9 @@ myApp.run(
 );
 
 myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider) {        
-        //$urlRouterProvider.otherwise("/pageNotFound");        
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true).hashPrefix('!');
+        $urlRouterProvider.otherwise("/pageNotFound");
         $stateProvider
             .state('home', {
                 url: "/",
@@ -43,7 +44,12 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                 url: "/blog/entries/:entryId",
                 templateUrl: './views/content/blog/entry.html',
                 controller: "BlogEntryController"
-            })            
+            })
+            .state('pageNotFound', {
+                url: "/pageNotFound",
+                templateUrl: "./views/content/pageNotFound.html"
+
+            })
             .state('underConstruction', {
                 url: "/underConstruction",
                 templateUrl: "./views/content/underConstruction.html",
@@ -59,12 +65,10 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             .state('software', {
                 url: "/services#software",
                 templateUrl: "./views/content/services.html"
-            })
-            .state('pageNotFound', {
-                url: "*path",
-                templateUrl: "./views/content/pageNotFound.html"
-
             });
+}]).config(['$resourceProvider', function($resourceProvider) {
+    // Don't strip trailing slashes from calculated URLs
+    $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
 myApp.service('constructionService', function(){

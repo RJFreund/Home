@@ -61,7 +61,7 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                 templateUrl: "./views/content/services.html"
             })
             .state('pageNotFound', {
-                url: "/*path",
+                url: "*path",
                 templateUrl: "./views/content/pageNotFound.html"
 
             });

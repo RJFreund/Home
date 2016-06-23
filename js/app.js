@@ -66,9 +66,6 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                 url: "/services#software",
                 templateUrl: "./views/content/services.html"
             });
-}]).config(['$resourceProvider', function($resourceProvider) {
-    // Don't strip trailing slashes from calculated URLs
-    $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
 myApp.service('constructionService', function(){

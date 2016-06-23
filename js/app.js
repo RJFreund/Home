@@ -14,8 +14,8 @@ myApp.run(
 
 myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
-        $locationProvider.html5Mode(true).hashPrefix('!');
-        $urlRouterProvider.otherwise("/pageNotFound");
+        //$locationProvider.html5Mode(true).hashPrefix('!');
+        $urlRouterProvider.otherwise("/");
         $stateProvider
             .state('home', {
                 url: "/",

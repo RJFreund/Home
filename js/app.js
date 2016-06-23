@@ -14,7 +14,8 @@ myApp.run(
 
 myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {        
-        $urlRouterProvider.otherwise("/pageNotFound");
+        //$urlRouterProvider.otherwise("/pageNotFound");
+        $urlRouterProvider.otherwise("/");
         $stateProvider
             .state('home', {
                 url: "/",

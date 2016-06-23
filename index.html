@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="AppController"  class="fullHeight blackBackground">
+<head>
+    <title ng-bind="getPageTitle()">R.J. Freund's Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel='stylesheet' href='./css/style.css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/angular-ui-router-title/angular-ui-router-title.js"></script>
+    <script src="./bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="./js/app.js"></script>
+</head>
+<body class="fullHeight openSans tallLineHeight">
+<div class="table fullHeight horizAlign pageContainer">
+    <div class="tableCell verticalAlign">
+        <div class="table fullWidth widthRestrict lightGrayBackground translucentBorder padding20">
+            <img id="backgroundImage" src='./img/galaxy.png'/>
+            <header ng-include src="'./views/headers/header.html'"></header>
+            <div ng-include src="'./views/socialMedia/socialMediaBar.html'"></div>
+            <main ui-view class="marginTop10"><img src="./img/spinner.gif"/></main>
+            <nav ng-include src="'./views/navs/nav.html'"></nav>
+            <footer ng-include src="'./views/footers/footer.html'"></footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

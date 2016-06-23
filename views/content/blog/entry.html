@@ -1,0 +1,4 @@
+<h2>Blog Entry</h2>
+<img src="/img/spinner.gif" ng-if="!getBlogEntry().body"/>
+<div ng-bind-html="getBlogEntry().body" class="marginTop10"></div>
+<a class="block marginTop10" ui-sref="blogEntries">Blog Entries</a>

@@ -1,0 +1,8 @@
+<h2 class="marginBottom10">Blog Entries</h2>
+<img src="/img/spinner.gif" ng-if="!getBlogEntries()"/>
+<div ng-repeat="blogEntry in getBlogEntries()">
+    <a ui-sref="blogEntry({entryId: blogEntry.entryId})">
+       {{blogEntry.entryId}}
+    </a>
+</div>
+<a ui-sref="blog" class="block marginTop10">Blog Home</a>

@@ -5,6 +5,8 @@
   box-sizing:         border-box;
 }
 
+body { z-index: -9999;}
+
 a img{
   border: none;
   width: 100%;
@@ -290,6 +292,10 @@ h2, h3, h4, h5, h6{
   background-color: #1da1f2;
 }
 
+.listStylePositionInside{
+  list-style-position: inside;
+}
+
 .blackText{
   color: #000000;
 }
@@ -338,7 +344,7 @@ h2, h3, h4, h5, h6{
   width: 33%;
 }
 
-#backgroundImage{
+#backgroundImage, canvas{
   width: 100%;
   min-height: 100%;
   min-width: 1500px;
@@ -346,7 +352,47 @@ h2, h3, h4, h5, h6{
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -99;
+}
+
+#origGear{ display: none; }
+
+.gear{
+  position: absolute;
+  margin: auto;
+  background: #fff;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.tooth{
+  position: absolute;
+  top: -25px;
+  left: 75px;
+  z-index: 1;
+  width: 45px;
+  height: 250px;
+  background:#fff;
+}
+
+.tooth:nth-child(2){
+  transform: rotate(45deg);
+}
+
+.tooth:nth-child(3){
+  transform: rotate(90deg);
+}
+
+.tooth:nth-child(4){
+  transform: rotate(135deg);
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
 }
 
 @media screen and (max-width: 1500px) { /* Specific to this particular image */

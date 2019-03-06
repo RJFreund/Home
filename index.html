@@ -17,14 +17,22 @@
 <div class="table fullHeight horizAlign pageContainer">
     <div class="tableCell verticalAlign">
         <div class="table fullWidth widthRestrict lightGrayBackground translucentBorder padding20">
-            <img id="backgroundImage" src='./img/galaxy.png'/>
+            <!-- <img id="backgroundImage" src='./img/galaxy.png'/> -->
             <header ng-include src="'./views/headers/header.html'"></header>
             <div ng-include src="'./views/socialMedia/socialMediaBar.html'"></div>
             <main ui-view class="marginTop10"><img src="./img/spinner.gif"/></main>
             <nav ng-include src="'./views/navs/nav.html'"></nav>
-            <footer ng-include src="'./views/footers/footer.html'"></footer>
+            <footer ng-include src="'./views/footers/footer.html'"></footer>            
         </div>
     </div>
 </div>
+<div id="origGear" class="gear">
+    <div class="tooth"></div>
+    <div class="tooth"></div>
+    <div class="tooth"></div>
+    <div class="tooth"></div>
+</div>
+<canvas></canvas>
 </body>
+<script src="./js/animations.js"></script>
 </html>

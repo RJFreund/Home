@@ -172,6 +172,10 @@ h2, h3, h4, h5, h6{
   padding: 10px;
 }
 
+.pt-0{
+  padding-top: 0px;
+}
+
 .paddingTop10{
   padding-top: 10px;
 }
